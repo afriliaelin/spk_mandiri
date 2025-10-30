@@ -1,0 +1,23 @@
+# ----------------------------------------------------------------------
+# .htaccess: Pengaturan untuk Front Controller dan Clean URL
+# ----------------------------------------------------------------------
+
+# Aktifkan Engine Modul Rewrite Apache
+RewriteEngine On
+
+# Aturan: Hapus index.php dari URL secara internal
+RewriteBase /spk_mandiri/public/
+# GANTI `/spk_mandiri/public/` dengan path folder public Anda yang sebenarnya 
+# jika Anda menempatkannya di sub-folder yang berbeda.
+
+# 1. Cek: Jika permintaan adalah direktori yang ada, jangan lakukan apa-apa.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 2. Cek: Jika permintaan adalah file yang ada, jangan lakukan apa-apa.
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# 3. Aturan Utama: Alihkan semua permintaan yang tersisa ke index.php
+# QSA (Query String Append) memastikan parameter URL tetap disertakan.
+RewriteRule ^(.*)$ index.php [L,QSA]

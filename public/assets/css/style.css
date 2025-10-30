@@ -1,0 +1,105 @@
+/*
+ * style.css: Custom Global Style for SPK Mandiri
+ * File ini harus dimuat di layout/admin.php
+ */
+
+/* ===== Tema Warna Mandiri Premium ===== */
+:root {
+    --mandiri-blue: #003399; /* Warna Primer */
+    --mandiri-yellow: #FFD100; /* Warna Sekunder/Aksen */
+    --mandiri-light: #f7f9fc;
+    --mandiri-dark: #1b1b2f;
+}
+
+body {
+    background-color: var(--mandiri-light);
+    font-family: "Poppins", "Nunito", sans-serif;
+}
+
+/* --- Tampilan Layout Utama (dari admin.php) --- */
+
+/* Gaya Sidebar - Panel Kiri */
+.sidebar {
+    flex: 0 0 250px; 
+    background-color: var(--mandiri-blue); /* Biru Mandiri Gelap */
+    color: #f8f9fa;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+.sidebar .nav-item .nav-link {
+    color: #f8f9fa;
+    padding: 12px 15px;
+    display: block;
+    transition: background-color 0.2s;
+}
+.sidebar .nav-item .nav-link:hover {
+    background-color: #004c8c;
+    color: white;
+}
+.sidebar-brand {
+    background-color: #002577; /* Biru sangat gelap */
+    color: var(--mandiri-yellow); /* Kuning Mandiri */
+    padding: 20px 15px;
+    display: block;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.sidebar-heading {
+    color: #aebfd4;
+    padding: 10px 15px 5px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+
+/* --- Styling Dashboard Khusus --- */
+
+.dashboard-header {
+    background: linear-gradient(90deg, var(--mandiri-blue), #0055cc);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dashboard-header h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0;
+}
+.dashboard-header .btn-warning {
+    font-weight: 600;
+    background-color: var(--mandiri-yellow);
+    border: none;
+    color: var(--mandiri-dark);
+    transition: 0.3s ease;
+}
+.dashboard-header .btn-warning:hover {
+    background-color: #f4c400;
+}
+
+/* Card Statistik */
+.card {
+    border-radius: 1rem;
+    transition: all 0.25s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.75rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Garis Kiri Kartu */
+.border-left-primary { border-left: 0.4rem solid var(--mandiri-blue) !important; }
+.border-left-success { border-left: 0.4rem solid #1cc88a !important; }
+.border-left-info { border-left: 0.4rem solid #36b9cc !important; }
+.border-left-warning { border-left: 0.4rem solid var(--mandiri-yellow) !important; }
+
+.text-primary { color: var(--mandiri-blue) !important; }
+.text-warning { color: var(--mandiri-yellow) !important; }
+.text-dark { color: #212529 !important; }
